@@ -7,6 +7,8 @@
 import sys
 import re
 import os.path
+from rancidtoolkit2.oxidized import oxidized 
+from rancidtoolkit2.rancid import rancid
 
 class rtconfig(object):
 
@@ -16,13 +18,13 @@ class rtconfig(object):
     def __init__(self, method="", locations=None, rancid_base="", oxidized_url=""):
         if method == "" and oxidized_url != "":
             method = "oxidized"
-        if method == "" and type(locations) == list and rancid_base != "":
+        if method == "" and (type(locations) == list or type(locations) == str) and rancid_base != "":
             method = "rancid"
 
         if method == "oxidized":
             self.__method = "oxidized"
             self.__configobj = oxidized(oxidized_url=oxidized_url)
-        elif method == "rancid" and type(locations) == list and rancid_base != "":
+        elif method == "rancid":
             self.__method = "rancid"
             self.__configobj = rancid(locations=locations, rancid_base=rancid_base)
         else:

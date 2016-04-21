@@ -1,3 +1,3 @@
 # Written by Marcus Stoegbauer <ms@man-da.de>
 
-__all__ = [ "cisco", "juniper", "rancid" , "oxidized", "rtconfig"]
+__all__ = [ "rtconfig", "rancid" , "oxidized" ]
