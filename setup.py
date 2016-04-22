@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 import os
 import sys
 
-version = "0.5"
+version = "0.1"
 
 if sys.argv[-1] == 'publish':
     os.system('python2.7 setup.py sdist upload')
@@ -13,7 +13,7 @@ if sys.argv[-1] == 'publish':
     print("  git push --tags")
     sys.exit()
 
-setup(name='rancidtoolkit',
+setup(name='rancidtoolkit2',
       version=version,
       description='Functions to parse network devices config files and output \
 specific data',

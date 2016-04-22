@@ -1,4 +1,5 @@
 build/
 dist/
-rancidtoolkit.egg-info/
+rancidtoolkit2.egg-info/
 *.pyc
+test.py*
