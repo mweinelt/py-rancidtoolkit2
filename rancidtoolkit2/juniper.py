@@ -157,7 +157,7 @@ def printSectionRecursive(configtree, spaces):
             printSectionRecursive(configtree[key], spaces + "   ")
             print spaces, "}"
         else:
-            print spaces, key
+            print spaces, key+";"
         # if configtree dict
     # for key
 # def printSectionRecursive
