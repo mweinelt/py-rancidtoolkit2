@@ -14,7 +14,7 @@ def parseFile(config):
     for line in config:
         if re.match("^#", line):
             continue
-        flatconfig += line
+        flatconfig += line.replace("## SECRET-DATA", "")
     # for line
     flatconfig = re.sub("\/\*.*?\*\/", " ", flatconfig)
     flatconfig = re.sub("\s+", " ", flatconfig)
