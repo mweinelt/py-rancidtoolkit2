@@ -53,7 +53,7 @@ class rancid(rtconfig):
             except:
                 continue
             for line in hand:
-                line = line[:-1]
+                line = line[:-1].lower()
                 if line == "" or re.match("^#", line) or \
                         re.match("^\s+$", line):
                     continue
