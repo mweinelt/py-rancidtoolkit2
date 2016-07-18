@@ -57,15 +57,21 @@ class rancid(rtconfig):
                 if line == "" or re.match("^#", line) or \
                         re.match("^\s+$", line):
                     continue
-                ret.append(line + ":" + loc)
+                ret.append(line + self.__separator + loc)
             # for file
         # for locations
         return ret
     # __readRouterDb
 
     def __setSeparator(self):
-        devs = self.__readRouterDb()
-        if devs[0].find(";") > 0:
+        routerdb = self.__rancid_base + "/" + self.__locations[0] + "/" + "router.db"
+        try:
+            hand = open(routerdb)
+        except:
+            raise Exception("Cannot determine separator, cannot open "+routerdb)
+
+        devs = hand.readlines()
+        if devs[1].find(";") > 0:
             self.__separator = ";"
     # __setSeparator
 
