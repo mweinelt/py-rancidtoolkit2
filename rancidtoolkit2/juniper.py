@@ -203,7 +203,7 @@ def get_interfaces(config):
         # if intdescr
         for unit in inttree[interface]:
             if not re.match(r'inactive: ', unit):
-                unitdescr = find_description(inttree[interface][unit])
+                unitdescr, _ = find_description(inttree[interface][unit])
                 unitres = re.match(r'unit ([\d]+)', unit)
                 if unitres:
                     ret["{}.{}".format(interface, unitres.group(1))] = unitdescr
